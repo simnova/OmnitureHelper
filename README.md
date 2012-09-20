@@ -7,12 +7,6 @@ A Tiny Libary to aid with Omniture Custom Link Tracking in Javascript Applicatio
 
 ----------------------------------------
 
-### What it is:
-
-A mapping template system for Omniture custom link and form tracking. 
-
-----------------------------------------
-
 ### Example 
 
 Containter Class
