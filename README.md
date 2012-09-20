@@ -82,10 +82,10 @@ define(['jquery', 'underscore', 'omnitureHelper'], function ($, _, OmnitureHelpe
     /**
     * Track Interaction within each Item 
     *
-    * @method hotspotItemInteraction
+    * @method itemInteraction
     * @param itemName {string} The item that was interacted with
     */
-    hotspotItemInteraction: function (itemName) {
+    itemInteraction: function (itemName) {
       oh.clearVariablesAndEvents();
       oh.fireEvent("itemInteraction");
       oh.setCommerceVariable("itemName", itemName);
