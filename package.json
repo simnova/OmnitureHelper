@@ -7,11 +7,11 @@
   "readmeFilename": "README.md",
 
   "devDependencies": {
-    "grunt-cli": "~0.1.6",
+    "grunt-cli": "0.1.6",
     "grunt-contrib-requirejs": "0.4.0",
     "grunt-contrib-jasmine": "0.3.2",
-    "grunt-contrib-jshint": "0.1.1",
-    "grunt-contrib-nodeunit": "0.1.2rc6"
+    "grunt-jslint": "0.2.3",
+    "grunt-contrib-nodeunit": "0.1.2"
   },
 
   "repository": {
