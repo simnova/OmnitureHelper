@@ -2,8 +2,8 @@
     "project": {
         "name": "omniture-helper",
         "description": "A Tiny Libary to aid with Omniture Custom Link Tracking in Javascript Applications",
-        "version": "0.0.2",
-        "url": "https://github.com/simnova/OmnitureHelper"
+        "version": "0.0.6",
+        "url": "http://simnova.github.com/OmnitureHelper"
     },
     "files": {
         "lib/omnitureHelper.js": {
