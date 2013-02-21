@@ -5,6 +5,7 @@
   "author": "Patrick Gidich",
   "license": "MIT",
   "readmeFilename": "README.md",
+  "homepage" : "https://github.com/simnova/OmnitureHelper",
 
   "devDependencies": {
     "grunt": "0.4.0",
@@ -12,7 +13,8 @@
     "grunt-contrib-requirejs": "0.4.0",
     "grunt-contrib-jasmine": "0.3.2",
     "grunt-jslint": "0.2.5",
-    "grunt-contrib-nodeunit": "0.1.2"
+    "grunt-contrib-nodeunit": "0.1.2",
+    "grunt-contrib-yuidoc" : "0.4.0"
   },
 
   "repository": {
