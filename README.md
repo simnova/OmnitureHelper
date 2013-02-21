@@ -4,7 +4,7 @@ OmnitureHelper
 [![Build Status](https://travis-ci.org/simnova/OmnitureHelper.png?branch=master)](https://travis-ci.org/simnova/OmnitureHelper)
 
 
-v0.0.1
+v0.0.2
 
 #Installation
   `npm install omniture-helper`

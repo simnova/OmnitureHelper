@@ -1,6 +1,6 @@
 {
   "name": "omniture-helper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Tiny Libary to aid with Omniture Custom Link Tracking in Javascript Applications",
   "author": "Patrick Gidich",
   "license": "MIT",
