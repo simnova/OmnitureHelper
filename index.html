@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Omniturehelper by simnova</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/simnova/OmnitureHelper">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Omniturehelper</h1>
+            <h2>A Tiny Libary to aid with Omniture Custom Link Tracking in Javascript Applications.</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/simnova/OmnitureHelper/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/simnova/OmnitureHelper/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>OmnitureHelper</h1>
+
+<p><a href="https://travis-ci.org/simnova/OmnitureHelper"><img src="https://travis-ci.org/simnova/OmnitureHelper.png?branch=master" alt="Build Status"></a></p>
+
+<p>v0.0.2</p>
+
+<h1>Installation</h1>
+
+<p><code>npm install omniture-helper</code></p>
+
+<h1>Test</h1>
+
+<p><code>npm test</code></p>
+
+<h1>Licence(MIT)</h1>
+
+<p>Copyright (C) 2013 Patrick Gidich</p>
+
+<p>A micro library to aid with Omniture custom link tracking in javascript applications.</p>
+
+<hr><h3>Example</h3>
+
+<p>Containter Class</p>
+
+<div class="highlight"><pre><span class="nx">define</span><span class="p">([</span><span class="s1">'jquery'</span><span class="p">,</span> <span class="s1">'underscore'</span><span class="p">,</span> <span class="s1">'omnitureHelper'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">OmnitureHelper</span><span class="p">)</span> <span class="p">{</span>
+  <span class="cm">/**</span>
+<span class="cm">  * MyOmnitureHelper - helper functionality for omniture tagging for a sample project.</span>
+<span class="cm">  *</span>
+<span class="cm">  * @class MyOmnitureHelper</span>
+<span class="cm">  * @constructor</span>
+<span class="cm">  */</span>
+
+  <span class="kd">var</span> <span class="nx">oh</span><span class="p">;</span>
+
+  <span class="c1">// Constructor</span>
+  <span class="kd">function</span> <span class="nx">MyOmnitureHelper</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">/// shows up as "events" in debugger</span>
+    <span class="kd">var</span> <span class="nx">events</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"pagesViews"</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"pageClick"</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"internalSearch"</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"itemClick"</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"itemInteraction"</span> <span class="p">},</span>
+      <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"enterExperience"</span> <span class="p">}</span>
+      <span class="p">];</span>
+
+    <span class="c1">/// 1-100 eVars (v# in debugger)</span>
+    <span class="kd">var</span> <span class="nx">commerceVariables</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"pagesViews"</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"itemName"</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"internalSearch"</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"aliasId"</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"emailId"</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"mailId"</span> <span class="p">},</span>
+      <span class="p">];</span>
+
+    <span class="c1">/// 1-100 sProp (c# in debugger)</span>
+    <span class="kd">var</span> <span class="nx">insightVariables</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"aliasId"</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"suiteId"</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"linkName"</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"visitor"</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"emailId"</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s2">"mailId"</span> <span class="p">},</span>
+      <span class="p">];</span>
+
+    <span class="nx">oh</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OmnitureHelper</span><span class="p">(</span><span class="nx">events</span><span class="p">,</span> <span class="nx">commerceVariables</span><span class="p">,</span> <span class="nx">insightVariables</span><span class="p">);</span>
+
+  <span class="p">};</span>
+
+  <span class="nx">MyOmnitureHelper</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    * Track Item Click</span>
+<span class="cm">    *</span>
+<span class="cm">    * @method itemClick</span>
+<span class="cm">    * @param item {string} The item that was viewed</span>
+<span class="cm">    */</span>
+    <span class="nx">itemClick</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">itemName</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">oh</span><span class="p">.</span><span class="nx">clearVariablesAndEvents</span><span class="p">();</span>
+      <span class="nx">oh</span><span class="p">.</span><span class="nx">fireEvent</span><span class="p">(</span><span class="s2">"itemClick"</span><span class="p">);</span>
+
+      <span class="c1">// track which item was viewed:</span>
+      <span class="nx">oh</span><span class="p">.</span><span class="nx">setCommerceVariable</span><span class="p">(</span><span class="s2">"itemName"</span><span class="p">,</span> <span class="nx">itemName</span><span class="p">);</span>
+      <span class="nx">oh</span><span class="p">.</span><span class="nx">setPageName</span><span class="p">(</span><span class="nx">itemName</span><span class="p">);</span>
+
+      <span class="nx">oh</span><span class="p">.</span><span class="nx">setChannel</span><span class="p">(</span><span class="s2">"bb module"</span><span class="p">);</span>
+      <span class="nx">oh</span><span class="p">.</span><span class="nx">trackVirtualPageView</span><span class="p">();</span>
+    <span class="p">},</span>
+
+    <span class="cm">/**</span>
+<span class="cm">    * Track Interaction within each Item </span>
+<span class="cm">    *</span>
+<span class="cm">    * @method itemInteraction</span>
+<span class="cm">    * @param itemName {string} The item that was interacted with</span>
+<span class="cm">    */</span>
+    <span class="nx">itemInteraction</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">itemName</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">oh</span><span class="p">.</span><span class="nx">clearVariablesAndEvents</span><span class="p">();</span>
+      <span class="nx">oh</span><span class="p">.</span><span class="nx">fireEvent</span><span class="p">(</span><span class="s2">"itemInteraction"</span><span class="p">);</span>
+      <span class="nx">oh</span><span class="p">.</span><span class="nx">setCommerceVariable</span><span class="p">(</span><span class="s2">"itemName"</span><span class="p">,</span> <span class="nx">itemName</span><span class="p">);</span>
+      <span class="nx">oh</span><span class="p">.</span><span class="nx">saveValues</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="p">},</span>
+
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span><span class="nx">MyOmnitureHelper</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>Logging of Item in Code</p>
+
+<div class="highlight"><pre>    <span class="nx">clickedItem</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">view</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+
+      <span class="nx">namespace</span><span class="p">.</span><span class="nx">myOmnitureHelper</span><span class="p">.</span><span class="nx">itemClick</span><span class="p">(</span><span class="s2">"login form show"</span><span class="p">);</span>
+      <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">},</span>
+</pre></div>
+
+<hr>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/simnova">simnova</a> can be found on <a href="https://github.com/simnova/OmnitureHelper">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-38701655-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
