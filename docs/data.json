@@ -1,0 +1,269 @@
+{
+    "project": {
+        "name": "omniture-helper",
+        "description": "A Tiny Libary to aid with Omniture Custom Link Tracking in Javascript Applications",
+        "version": "0.0.2",
+        "url": "https://github.com/simnova/OmnitureHelper"
+    },
+    "files": {
+        "lib/omnitureHelper.js": {
+            "name": "lib/omnitureHelper.js",
+            "modules": {},
+            "classes": {
+                "OmnitureHelper": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "OmnitureHelper": {
+            "name": "OmnitureHelper",
+            "shortname": "OmnitureHelper",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "lib/omnitureHelper.js",
+            "line": 32,
+            "description": "OmnitureHelper - a microlibrary for omniture tagging.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "events",
+                    "description": "(id,name) array of all events that will be used.",
+                    "type": "Object"
+                },
+                {
+                    "name": "commerceVariables",
+                    "description": "(id,name) array of all commerce variables that will be used.",
+                    "type": "Object"
+                },
+                {
+                    "name": "insightVariables",
+                    "description": "(id,name) array of all insight variables that will be used.",
+                    "type": "Object"
+                }
+            ]
+        }
+    },
+    "classitems": [
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 94,
+            "description": "Clears Variables, Page Name and Events. Useful to be used before setting values in a method",
+            "itemtype": "method",
+            "name": "clearVariablesAndEvents",
+            "class": "OmnitureHelper"
+        },
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 106,
+            "description": "Clears Every Commerce Variable.",
+            "itemtype": "method",
+            "name": "clearCommerceVariables",
+            "class": "OmnitureHelper"
+        },
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 122,
+            "description": "Lists Every Commerce Variable with a Value.",
+            "itemtype": "method",
+            "name": "commerceVariablesWithValues",
+            "class": "OmnitureHelper"
+        },
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 141,
+            "description": "Clears Every Insight Variable",
+            "itemtype": "method",
+            "name": "clearInsightVariables",
+            "class": "OmnitureHelper"
+        },
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 157,
+            "description": "Lists Every Insight Variable with a Value.",
+            "itemtype": "method",
+            "name": "insightVariablesWithValues",
+            "class": "OmnitureHelper"
+        },
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 176,
+            "description": "Set Page Name",
+            "itemtype": "method",
+            "name": "setPageName",
+            "params": [
+                {
+                    "name": "pageName",
+                    "description": "The Name of the Page.",
+                    "type": "String"
+                }
+            ],
+            "class": "OmnitureHelper"
+        },
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 186,
+            "description": "Set Page Url",
+            "itemtype": "method",
+            "name": "setPageUrl",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "The Url To Set.",
+                    "type": "String"
+                }
+            ],
+            "class": "OmnitureHelper"
+        },
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 196,
+            "description": "Set Channel",
+            "itemtype": "method",
+            "name": "setChannel",
+            "params": [
+                {
+                    "name": "channelName",
+                    "description": "The Channel Name.",
+                    "type": "String"
+                }
+            ],
+            "class": "OmnitureHelper"
+        },
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 206,
+            "description": "Used only to designate a 404 Page Not Found Error Page.",
+            "itemtype": "method",
+            "name": "setErrorPage",
+            "class": "OmnitureHelper"
+        },
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 215,
+            "description": "Fire Event (s.events) adds another event to the list of events.",
+            "itemtype": "method",
+            "name": "fireEvent",
+            "params": [
+                {
+                    "name": "eventName",
+                    "description": "The key of the event to be added",
+                    "type": "String"
+                }
+            ],
+            "class": "OmnitureHelper"
+        },
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 228,
+            "description": "Clear Events (s.events) removes all events.",
+            "itemtype": "method",
+            "name": "fireEvent",
+            "class": "OmnitureHelper"
+        },
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 237,
+            "description": "Increment Commerce Variable (s.eVar)",
+            "itemtype": "method",
+            "name": "incrementCommerceCounterValue",
+            "params": [
+                {
+                    "name": "variableName",
+                    "description": "The key associated with the eVar number that is to be incremented.",
+                    "type": "String"
+                }
+            ],
+            "class": "OmnitureHelper"
+        },
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 248,
+            "description": "Set Commerce Variable (s.eVar)",
+            "itemtype": "method",
+            "name": "setCommerceVariable",
+            "params": [
+                {
+                    "name": "variableName",
+                    "description": "The key associated with the eVar number that is to be set.",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "The value that is to be recorded.",
+                    "type": "String"
+                }
+            ],
+            "class": "OmnitureHelper"
+        },
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 260,
+            "description": "Set Insight Variable (s.prop)",
+            "itemtype": "method",
+            "name": "setInsightVariable",
+            "params": [
+                {
+                    "name": "variableName",
+                    "description": "The key associated with the prop number that is to be set.",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "The value that is to be recorded.",
+                    "type": "String"
+                }
+            ],
+            "class": "OmnitureHelper"
+        },
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 272,
+            "description": "used to track evars / props with associated page info.",
+            "itemtype": "method",
+            "name": "trackVirtualPageView",
+            "class": "OmnitureHelper"
+        },
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 282,
+            "description": "used to track evars / props WITHOUT associated page info.",
+            "itemtype": "method",
+            "name": "saveValues",
+            "params": [
+                {
+                    "name": "thisvar",
+                    "description": "this",
+                    "type": "Object"
+                }
+            ],
+            "class": "OmnitureHelper"
+        },
+        {
+            "file": "lib/omnitureHelper.js",
+            "line": 316,
+            "description": "used to track exit link.",
+            "itemtype": "method",
+            "name": "saveValues",
+            "params": [
+                {
+                    "name": "thisvar",
+                    "description": "this",
+                    "type": "Object"
+                },
+                {
+                    "name": "linkName",
+                    "description": "the url or some other decription of where the user is going..",
+                    "type": "String"
+                }
+            ],
+            "class": "OmnitureHelper"
+        }
+    ],
+    "warnings": []
+}
