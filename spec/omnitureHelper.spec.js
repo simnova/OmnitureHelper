@@ -107,6 +107,13 @@
         expect(s.events).toEqual("event1");
       });
 
+      it("Should thrown an exeception when an invalid even name is provided", function () {
+        omnitureHelper = new window.OmnitureHelper(events, commerceVariables, insightVariables);
+        expect(function () {
+          omnitureHelper.fireEvent("badEventName");
+        }).toThrow("Parameter: 'eventName' with value :'badEventName' not found in event array");
+      });
+
       it("Setting Multiple Events", function () {
         omnitureHelper = new window.OmnitureHelper(events, commerceVariables, insightVariables);
         omnitureHelper.fireEvent("pageClick");
@@ -137,10 +144,24 @@
         expect(s.eVar2).toEqual(expectedValue);
       });
 
+      it("Should thrown an exeception when an invalid commerce variable name is provided", function () {
+        omnitureHelper = new window.OmnitureHelper(events, commerceVariables, insightVariables);
+        expect(function () {
+          omnitureHelper.setCommerceVariable("badCommerceVariableName", testValue);
+        }).toThrow("Parameter: 'commerceVariableName' with value :'badCommerceVariableName' not found in commerce variable array");
+      });
+
       it("Setting Insight Variable", function () {
         omnitureHelper = new window.OmnitureHelper(events, commerceVariables, insightVariables);
         omnitureHelper.setInsightVariable("suiteId", testValue);
         expect(s.prop4).toEqual(expectedValue);
+      });
+
+      it("Should thrown an exeception when an invalid insight variable name is provided", function () {
+        omnitureHelper = new window.OmnitureHelper(events, commerceVariables, insightVariables);
+        expect(function () {
+          omnitureHelper.setInsightVariable("badInsightVariableName", testValue);
+        }).toThrow("Parameter: 'insightVariableName' with value :'badInsightVariableName' not found in insight variable array");
       });
 
       it("TrackVirtualPageView", function () {

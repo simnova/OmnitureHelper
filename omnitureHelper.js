@@ -49,27 +49,27 @@
   }
 
   // Private Methods
-  function findCommerceVariableId(variableName) {
+  function findCommerceVariableId(commerceVariableName) {
     var id;
     try {
-      id = _.find(_commerceVariables, function (variable) { return variable.name === variableName; }).id;
+      id = _.find(_commerceVariables, function (variable) { return variable.name === commerceVariableName; }).id;
     } catch (e) {
       throw {
         name: "Invalid Argument Exception",
-        message: "Parameter: 'variableName' with value :'" + variableName + "' not found in insight variable array"
+        message: "Parameter: 'commerceVariableName' with value :'" + commerceVariableName + "' not found in commerce variable array"
       };
     }
     return id;
   }
 
-  function findInsightVariableId(variableName) {
+  function findInsightVariableId(insightVariableName) {
     var id;
     try {
-      id = _.find(_insightVariables, function (variable) { return variable.name === variableName; }).id;
+      id = _.find(_insightVariables, function (variable) { return variable.name === insightVariableName; }).id;
     } catch (e) {
       throw {
         name: "Invalid Argument Exception",
-        message: "Parameter: 'variableName' with value :'" + variableName + "' not found in insight variable array"
+        message: "Parameter: 'insightVariableName' with value :'" + insightVariableName + "' not found in insight variable array"
       };
     }
     return id;

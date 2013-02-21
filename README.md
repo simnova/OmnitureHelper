@@ -17,7 +17,7 @@ v0.0.2
 Copyright (C) 2013 Patrick Gidich
 
 
-A Tiny Libary to aid with Omniture Custom Link Tracking in Javascript Applications.
+A micro library to aid with Omniture custom link tracking in javascript applications.
 
 ----------------------------------------
 
