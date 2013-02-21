@@ -1,0 +1,26 @@
+{
+  "name": "OmnitureHelper",
+  "version": "0.0.1",
+  "description": "A Tiny Libary to aid with Omniture Custom Link Tracking in Javascript Applications",
+  "devDependencies": {
+    "grunt-cli": "~0.1.6",
+    "grunt-contrib-requirejs": "0.4.0",
+    "grunt-contrib-jasmine": "0.3.2",
+    "grunt-contrib-jshint": "0.1.1",
+    "grunt-contrib-nodeunit": "0.1.2rc6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simnova/OmnitureHelper.git"
+  },
+  "keywords": [
+    "Omniture"
+  ],
+  "author": "Patrick Gidich",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "scripts": {
+    "test": "grunt test --verbose"
+  },
+
+}
