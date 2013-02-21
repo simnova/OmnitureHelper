@@ -1,7 +1,21 @@
 OmnitureHelper
 =====================
 
-v0.1
+[![Build Status](https://travis-ci.org/simnova/OmnitureHelper.png?branch=master)](https://travis-ci.org/simnova/OmnitureHelper)
+
+
+v0.0.1
+
+#Installation
+  `npm install omniture-helper`
+
+#Test
+  `npm test`
+
+#Licence(MIT)
+
+Copyright (C) 2013 Patrick Gidich
+
 
 A Tiny Libary to aid with Omniture Custom Link Tracking in Javascript Applications.
 
